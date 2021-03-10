@@ -21,13 +21,24 @@ logInUser.addEventListener('submit', (e) => {
         .then(res => res.json())
         .then(data => {
                 console.log(data)
-                if (data) {
-                    console.log(true)
+                if (!data) return alert('Something went wrong!');
 
-                } else {
-                    alert("Login failed!")
-                    console.log(false)
-                }
+                localStorage.setItem('token', data.Token)
+
+                fetch('http://localhost:4000/api/users/details/', {
+                        headers: {
+                            "Authorization": `Bearer ${localStorage['token']}`
+                        }
+                    })
+                    .then(res => {
+                        return res.json()
+                    })
+                    .then(data => {
+                        localStorage['id'] = data._id;
+                        localStorage['isAdmin'] = data.isAdmin;
+
+                        window.location.replace('./courses.html')
+                    })
             }
 
         )
