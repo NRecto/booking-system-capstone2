@@ -23,5 +23,15 @@ registerForm.addEventListener('submit', (e) => {
             }
         })
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => {
+                console.log(data)
+                if (data) {
+                    alert("Registration Successful!");
+                    window.location.replace('./login.html')
+                } else {
+                    alert("Something went wrong!")
+                }
+            }
+
+        )
 })
