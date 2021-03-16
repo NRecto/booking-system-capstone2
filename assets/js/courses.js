@@ -23,25 +23,30 @@ fetch('http://localhost:4000/api/courses/')
     })
     .then(data => {
 
+    function displayCardFooter(courseId){
+
         if (adminUser == "false" || !adminUser) {
             cardFooter = ` 
-            <a href="./course.html?courseId=__courseId__" class="btn btn-primary">
+            <a href="./course.html?courseId=${courseId}" class="btn btn-primary">
 
                  Select Course
 
             </a>`
         } else {
-            cardFooter = `<a href="./editCourse.html?courseId=__courseId__" class="btn btn-primary editButton">
+            cardFooter = `<a href="./editCourse.html?courseId=${courseId}" class="btn btn-primary editButton">
 
                 Edit
 
             </a>
-             <a href="./deleteCourse.html?courseId=__courseId__" class="btn btn-danger deleteButton">
+             <a href="./deleteCourse.html?courseId=${courseId}" class="btn btn-danger deleteButton">
 
                 Delete
 
              </a>`
         }
+        return cardFooter;
+    }
+        
 
         // <li>name</li>
         let courseContainer = document.querySelector("#courseContainer");
@@ -55,7 +60,7 @@ fetch('http://localhost:4000/api/courses/')
                     <p class="card-text">${elem.description}</p>
                     </div>
                     <div class="card-footer">
-                    ${cardFooter}
+                    ${displayCardFooter(elem._id)}
                 </div>
                 </div>
             </div>`
