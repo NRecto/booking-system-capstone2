@@ -23,7 +23,18 @@ if (!token || token === null) {
 		if(enrolledCourses.length === 0){
 			message = "No Enrolled Courses yet."
 		} else {
-			message = "";
+
+			let listOfCourses = enrolledCourses.map( course => {
+			return	`
+					<tr>
+						<td>${course.courseId}</td>
+						<td>${course.enrolledOn}</td>
+						<td>${course.status}</td>
+					</tr>
+				`
+			})	
+
+			message = listOfCourses.join("");
 		}
 
 		const profileDetails = 
@@ -45,11 +56,7 @@ if (!token || token === null) {
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- tr sample start-->
-                            <tr>
-                               <td>${message}</td>
-                            </tr>
-                            <!-- tr sample end -->
+                        	${message}
                         </tbody>
                     </table>
                 </section>
