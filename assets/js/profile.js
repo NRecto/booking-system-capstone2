@@ -5,7 +5,7 @@ if (!token || token === null) {
 	alert("You must login First")
 	window.location.replace('./login.html')
 } else {
-	fetch('http://localhost:4000/api/users/details' ,
+	fetch('https://nrecto-course-booking.herokuapp.com/api/users/details' ,
 	{
 		method: 'GET',
 		headers: {
@@ -15,7 +15,7 @@ if (!token || token === null) {
 	})
 	.then( res => res.json())
 	.then( data => {
-		console.log(data.enrollments)
+		// console.log(data.enrollments)
 		let enrolledCourses = data.enrollments;
 
 		let message = "";
@@ -24,17 +24,31 @@ if (!token || token === null) {
 			message = "No Enrolled Courses yet."
 		} else {
 
-			let listOfCourses = enrolledCourses.map( course => {
-			return	`
-					<tr>
-						<td>${course.courseId}</td>
-						<td>${course.enrolledOn}</td>
-						<td>${course.status}</td>
-					</tr>
-				`
+			let listOfCourses = enrolledCourses.map( course => {	
+			let courseName;
+					fetch(`https://nrecto-course-booking.herokuapp.com/api/courses/${course.courseId}`, 
+						{
+							method: 'GET',
+							headers: {
+								'Content-Type' : 'application/json',
+								'Authorization': `Bearer ${token}`
+							}
+						})
+						.then( res => res.json())
+						.then( data => {
+							courseName = data.name;
+								})
+								
+								return	`
+										<tr>
+											<td>${courseName}</td>
+											<td>${course.enrolledOn}</td>
+											<td>${course.status}</td>
+										<tr>
+									`
 			})	
+							message = listOfCourses.join("");
 
-			message = listOfCourses.join("");
 		}
 
 		const profileDetails = 

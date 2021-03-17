@@ -12,12 +12,14 @@ if (adminUser == 'false' || !adminUser) {
     adminButton == "";
 } else {
     adminButton.innerHTML = `
-            <div class="col-md-2 mx-auto">
-                <a href="" class="btn btn-primary">Add Coure</a>
-            </div>`
+            <div class="col-12 text-center my-5">
+                <a href="./addCourse.html" class="btn btn-primary">Add Course</a>
+            </div>
+}
+            `
 }
 
-fetch('http://localhost:4000/api/courses/')
+fetch('https://nrecto-course-booking.herokuapp.com/api/courses/')
     .then(res => {
         return res.json()
     })
@@ -33,7 +35,13 @@ fetch('http://localhost:4000/api/courses/')
 
             </a>`
         } else {
-            cardFooter = `<a href="./editCourse.html?courseId=${courseId}" class="btn btn-primary editButton">
+            cardFooter = `
+            <a href="./course.html?courseId=${courseId}" class="btn btn-warning deleteButton">
+
+                Check Course
+
+             </a>
+            <a href="./editCourse.html?courseId=${courseId}" class="btn btn-primary editButton">
 
                 Edit
 

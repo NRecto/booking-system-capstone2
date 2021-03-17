@@ -1,7 +1,7 @@
 const urlParams = new URLSearchParams(window.location.search);
 const courseId = urlParams.get('courseId');
 
-let url = `http://localhost:4000/api/courses/${courseId}`;
+let url = `https://nrecto-course-booking.herokuapp.com/api/courses/${courseId}`;
 
 fetch(url)
 .then( res => res.json())
@@ -40,7 +40,7 @@ return editCourse.innerHTML =
 			description: courseDescription
 		}
 
-		fetch('http://localhost:4000/api/courses/',
+		fetch('https://nrecto-course-booking.herokuapp.com/api/courses/',
 			{
 	  			method: 'PUT',
 	  			headers: { 'Content-Type': 'application/json',

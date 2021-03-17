@@ -15,7 +15,7 @@ registerForm.addEventListener('submit', (e) => {
         password: password,
         confirmPassword: confirmPassword
     }
-    fetch('http://localhost:4000/api/users/', {
+    fetch('https://nrecto-course-booking.herokuapp.com/api/users/', {
             method: "POST",
             body: JSON.stringify(body),
             headers: {

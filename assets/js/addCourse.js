@@ -24,7 +24,7 @@ createCourse.addEventListener('submit', (e) => {
         description
     }
 
-    fetch('http://localhost:4000/api/courses/', {
+    fetch('https://nrecto-course-booking.herokuapp.com/api/courses/', {
             method: "POST",
             body: JSON.stringify(body),
             headers: {

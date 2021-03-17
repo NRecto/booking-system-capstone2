@@ -11,7 +11,7 @@ logInUser.addEventListener('submit', (e) => {
         password: password
     }
 
-    fetch('http://localhost:4000/api/users/login/', {
+    fetch('https://nrecto-course-booking.herokuapp.com/api/users/login/', {
             method: "POST",
             body: JSON.stringify(body),
             headers: {
@@ -25,7 +25,7 @@ logInUser.addEventListener('submit', (e) => {
 
                 localStorage.setItem('token', data.Token)
 
-                fetch('http://localhost:4000/api/users/details/', {
+                fetch('https://nrecto-course-booking.herokuapp.com/api/users/details/', {
                         headers: {
                             "Authorization": `Bearer ${localStorage['token']}`
                         }
