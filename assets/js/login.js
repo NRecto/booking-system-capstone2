@@ -20,7 +20,7 @@ logInUser.addEventListener('submit', (e) => {
         })
         .then(res => res.json())
         .then(data => {
-                console.log(data)
+                // console.log(data)
                 if (!data) return alert('Something went wrong!');
 
                 localStorage.setItem('token', data.Token)

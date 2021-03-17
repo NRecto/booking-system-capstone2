@@ -1,13 +1,10 @@
-// fetch(url)
-// .then(res)
-// .then(data)
-// .catch()
 
 let adminUser = localStorage['isAdmin'];
 let adminButton = document.querySelector('#adminButton');
 
 let cardFooter;
 
+// ADD COURSE BUTTON IF ADMIN
 if (adminUser == 'false' || !adminUser) {
     adminButton == "";
 } else {
@@ -15,7 +12,6 @@ if (adminUser == 'false' || !adminUser) {
             <div class="col-12 text-center my-5">
                 <a href="./addCourse.html" class="btn btn-primary">Add Course</a>
             </div>
-}
             `
 }
 
@@ -24,45 +20,59 @@ fetch('https://nrecto-course-booking.herokuapp.com/api/courses/')
         return res.json()
     })
     .then(data => {
-
-    function displayCardFooter(courseId){
-
-        if (adminUser == "false" || !adminUser) {
-            cardFooter = ` 
-            <a href="./course.html?courseId=${courseId}" class="btn btn-primary">
-
-                 Select Course
-
-            </a>`
-        } else {
-            cardFooter = `
-            <a href="./course.html?courseId=${courseId}" class="btn btn-warning deleteButton">
-
-                Check Course
-
-             </a>
-            <a href="./editCourse.html?courseId=${courseId}" class="btn btn-primary editButton">
-
-                Edit
-
-            </a>
-             <a href="./deleteCourse.html?courseId=${courseId}" class="btn btn-danger deleteButton">
-
-                Delete
-
-             </a>`
+        // console.log(data)
+        // if not admin show only active courses
+        let activeCourse = [];
+        if ( adminUser == 'false' ) {
+            data.forEach( course => { 
+                if (course.isActive == true) {
+                    activeCourse.push(course)
+                }
+            })
+        } else { // otherwise if admin show all courses
+            data.forEach( course => {
+                return activeCourse.push(course);
+            })
         }
-        return cardFooter;
-    }
-        
+        // DYNAMICALLY CHANGE THE FOOTER ACCPRDING TO isAdmin
+        function displayCardFooter(courseId) {
+            if (adminUser == 'false' || !adminUser) {
+                cardFooter = 
+                ` 
+                    <a href="./course.html?courseId=${courseId}" class="btn btn-primary">
 
-        // <li>name</li>
+                        Select Course
+
+                    </a>
+                `
+            } else {
+                    cardFooter = 
+                    `
+                        <a href="./editCourse.html?courseId=${courseId}" class="btn btn-primary editButton">
+
+                            Edit
+
+                        </a>
+                        <a href="./deleteCourse.html?courseId=${courseId}" class="btn btn-danger deleteButton">
+
+                            Delete
+
+                        </a>
+                        <a href="./course.html?courseId=${courseId}" class="btn btn-warning deleteButton">
+
+                        Check Course
+
+                        </a>
+                    `
+            }
+            return cardFooter;
+        }
         let courseContainer = document.querySelector("#courseContainer");
-        let courseData = data.map(elem => {
+        let courseData = activeCourse.map(elem => {
             return `
-            <div class="col-md-6 my-3">
+            <div class="col-12 col-md-6 my-3">
                 <div class="card">
-                 <div class="card-body">
+                    <div class="card-body">
                     <h5 class="card-title">${elem.name}</h5>
                     <p class="card-text text-right">&#8369; ${elem.price}</p>
                     <p class="card-text">${elem.description}</p>
