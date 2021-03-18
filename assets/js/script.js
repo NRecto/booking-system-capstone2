@@ -16,7 +16,7 @@ if  (!token) {
                 <a class="nav-link" href="./pages/courses.html">Courses</a>
             </li>
         </ul>
-        <ul class="navbar-nav mx-5">
+        <ul class="navbar-nav ">
             <li class="nav-item ">
                 <a href="./pages/login.html" class="nav-link ">Login</a>
             </li>
@@ -42,7 +42,7 @@ if  (!token) {
                         <a class="nav-link" href="./pages/courses.html">Courses</a>
                     </li>
                 </ul>
-                <ul class="navbar-nav mx-5">
+                <ul class="navbar-nav ">
                     <li class="nav-item ">
                         <a href="./pages/logout.html" class="nav-link ">Logout</a>
                     </li>
