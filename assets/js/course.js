@@ -12,42 +12,45 @@ console.log(data.enrollees)
 let courseName = document.querySelector('#courseName');
 let courseDesc = document.querySelector('#courseDesc');
 let coursePrice = document.querySelector('#coursePrice');
-let courseEnrollees = document.querySelector('#courseEnrollees');
+let adminData = document.querySelector('#adminData');
 
 
+courseName.innerHTML = data.name;
+courseDesc.innerHTML = data.description;
+coursePrice.innerHTML = data.price;
 
-if (isAdmin == 'false') {
-    
-    courseName.innerHTML = data.name;
-    courseDesc.innerHTML = data.description;
-    coursePrice.innerHTML = data.price;
-} else {
-    courseName.innerHTML = data.name;
-    courseDesc.innerHTML = data.description;
-    coursePrice.innerHTML = data.price;
-
+let userData;
+let userNo = 0;
+if (isAdmin == 'true') {
     let enrolleeData = data.enrollees.map( data => {
+        userNo++
         return `
-        <table class="table table-hover">
-            <thead>
-                <tr>   
-                    <th>Enrolled User</th>
-                    <th>User ID</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>   
-                    <td></td>
-                    <td>${data.userId}</td>
-                </tr>
-            </tbody>
-        </table>
-        ` 
-        
-    } );
-    courseEnrollees.innerHTML = enrolleeData.join("");
+        <tr>   
+        <td>${userNo}</td>
+        <td>${data.userId}</td>
+    </tr>
+        `
+    });
+
+    userData = enrolleeData.join("");
     
-}
+} 
+adminData.innerHTML = `
+                <table class="table table-hover">
+                    <thead>
+                        <tr>   
+                            <th>Enrolled User</th>
+                            <th>User ID</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${userData}
+                    </tbody>
+                </table>
+`
+
+
+
 
 document.querySelector('#enrollButton').addEventListener('click', () => {
     
