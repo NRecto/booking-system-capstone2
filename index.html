@@ -11,8 +11,11 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Gruppo&display=swap" rel="stylesheet">
-    <title>Zuiiter!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&family=Poppins:wght@200;700&display=swap" rel="stylesheet">
+    <!-- ANIMATE ON SCROLL -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <title>Campeón | Home</title>
 </head>
 
 <body>
@@ -45,21 +48,25 @@
     </nav>
     <!-- NAV END -->
     <!-- HEADER START -->
-    <header id="landingPage" class="text-center">
-        <h1>Zuitter Booking Service</h1>
-        <p class="lead">Booking for everyone, everywhere</p>
-        <a href="./pages/courses.html" class="btn btn-outline-primary booking">Book Now!</a>
+    <header class="container d-flex justify-content-center">
+        <div id="landingPage" class="row ">
+            <div class="col-12 col-md-6" data-aos="fade-left" data-aos-duration="1500" data-aos-easing="ease-in-out">
+                <h1>Campeón</h1>
+                <p class="lead">Zero 2 Podium.</p>
+                <a href="./pages/courses.html" class="btn btn-light">Book Now!</a>
+            </div>
+            <div class="col-12 col-md-6" id="landingImage" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="1500">
+                <img src="./assets/images/motodeck.png" alt="motodeck" id="motodeck">
+            </div>
+        </div>
+        
     </header>
     <!-- HEADER END -->
     <!-- MAIN START -->
-    <div  class="container">
-        <h1 class="text-center">Courses Offered</h1>
-        <div class="row " id="courseContainer">
-        </div>
-    </div>
+
     <!-- MAIN END -->
     <!-- FOOTER START -->
-    <footer class="footer bg-primary">
+    <footer class="footer">
         <p class="text-white p-3 mb-0 text-center ">
             Zuitter Booking Services
         </p>
@@ -71,6 +78,12 @@
 
     <!-- JS -->
     <script src="assets/js/script.js"></script>
+
+    <!-- ANIMATE ON SCROLL -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
 </body>
 
 </html>

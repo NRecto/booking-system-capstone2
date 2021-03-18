@@ -3,7 +3,7 @@ let navbar = document.querySelector('.navbar');
 
 if  (!token) {
     navbar.innerHTML = `<div class="container-fluid">
-    <a class="navbar-brand" href="./index.html">Zuitter</a>
+    <a class="navbar-brand" href="./index.html">Campeón</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -29,7 +29,7 @@ if  (!token) {
 } else {
     navbar.innerHTML = `
     <div class="container-fluid">
-            <a class="navbar-brand" href="./index.html">Zuitter</a>
+            <a class="navbar-brand" href="./index.html">Campeón</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -51,24 +51,3 @@ if  (!token) {
         </div>
     `
 }
-fetch('https://nrecto-course-booking.herokuapp.com/api/courses/')
-    .then(res => {
-        return res.json()
-    })
-    .then(data => {
-        let courseContainer = document.querySelector('#courseContainer');
-        let courseData = data.map( course => {
-            return `
-                    <div class="col-md-6 my-3 d-flex flex-nowrap mx-auto">
-                        <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">${course.name}</h5>
-                            <p class="card-text text-right">&#8369; ${course.price}</p>
-                            <p class="card-text">${course.description}</p>
-                        </div>
-                        </div>
-                    </div>
-                    `
-        })
-        courseContainer.innerHTML = courseData.join("");
-    })

@@ -12,7 +12,10 @@
     <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Sriracha&display=swap" rel="stylesheet">
-    <title>Courses</title>
+    <!-- ANIMATE ON SCROLL -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <title>Campeón | Courses</title>
 </head>
 
 <body>
@@ -45,20 +48,30 @@
     </nav>
     <!-- NAV END -->
     <!-- HEADER START -->
-    <header class="text-center">
-        <h1>Zuitter Booking Service</h1>
-        <p class="lead">Booking for everyone, everywhere</p>
-        <a href="./courses.html" class="btn btn-outline-primary">Book Now!</a>
-    </header>
+    <!-- <div class="container d-flex justify-content-center">
+        <iframe id="ytLink" src="https://www.youtube.com/embed/NJiKOijS0uE?controls=0&autoplay=1">
+        </iframe>
+    </div> -->
+        <div id="coursesHeader" class="container d-flex justify-content-center align-items-center text-center">
+            <div class="row">
+                <div class="col-12">
+                    <h1 data-aos="zoom-in" data-aos-duration="1500" data-aos-easing="ease-in-out">Campeón</h1>
+                    <p class="lead" data-aos="fade-up" data-aos-duration="1500" data-aos-easing="ease-in-out" data-aos-delay="1500">Be part of the best riders in the Philippines.</p>
+                </div>
+            </div>
+        </div>
     <!-- HEADER END -->
     <!-- MAIN START -->
-    <main class="container my-5 "></main>
+    <main class="container-fluid my-5 ">
     <!-- admin buttons start -->
     <div id="adminButton" class="row ">
         <p>
         </p>
     </div>
     <!-- admin button end -->
+    <div class="d-flex justify-content-center" id="coursesTitle">
+        <h2>Courses Offered</h2>
+    </div>
     <div id="courseContainer" class="row mx-5">
         <!-- start of each course -->
         <div class="col-12">
@@ -69,33 +82,14 @@
                 </h2>
             </section>
         </div>
-        <!-- end of each course -->
-        <!-- start sample course card -->
-        <!-- <div class="col-md-6 my-3">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Title</h5>
-                    <p class="card-text text-right">&#8369; Pesos</p>
-                    <p class="card-text">Description</p>
-                </div> -->
-                <!-- <div class="card-footer"> -->
-                    <!-- for admin buttons -->
-                    <!-- <a href="./editCourse.html?courseId=__courseId__" class="btn btn-primary editButton">Edit</a> -->
-                    <!-- <a href="./deleteCourse.html?courseId=__courseId__" class="btn btn-danger deleteButton">Delete</a> -->
-                    <!-- end admin buttons -->
-                    <!-- for not admin buttons -->
-                    <!-- <a href="./course.html?courseId=__courseId__" class="btn btn-primary">Select Course</a> -->
-                    <!-- end not admin buttons -->
-                <!-- </div>
-            </div>
-        </div> -->
         <!-- end start course card -->
     </div>
+</main>
     <!-- MAIN END -->
     <!-- FOOTER START -->
-    <footer class="footer bg-primary">
+    <footer class="footer">
         <p class="text-white p-3 mb-0 text-center ">
-            Zuitter Booking Services
+            Campeón | 2021
         </p>
     </footer>
     <!-- FOOTER END -->
@@ -104,8 +98,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
     
     <!-- JS -->
-    <!-- <script src="./../assets/js/script.js"></script> -->
     <script src="./../assets/js/courses.js"></script>
+
+    <!-- ANIMATE ON SCROLL -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
 </body>
 
 </html>
