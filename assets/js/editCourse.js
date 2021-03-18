@@ -60,6 +60,29 @@ return editCourse.innerHTML =
 
 	}); // end ofcallback function on submit
 
+	document.querySelector('.form-select').addEventListener('change' , (e) => {
+	
+		if (e.target.value == "true" ) {
+			fetch(url, {
+				method: 'PUT',
+				headers: {
+					'Authorization': `Bearer ${localStorage['token']}`
+				}
+			})
+			.then( res => res.json())
+			.then( () => alert('Course Enabled'))
+		} else {
+			fetch(url, {
+				method: 'DELETE',
+				headers: {
+					'Authorization': `Bearer ${localStorage['token']}`
+				}
+			})
+			.then( res => res.json())
+			.then( () => alert('Course disabled'))
+		}
+	})
+
 })
 
 

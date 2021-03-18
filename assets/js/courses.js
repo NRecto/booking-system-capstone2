@@ -53,12 +53,7 @@ fetch('https://nrecto-course-booking.herokuapp.com/api/courses/')
                             Edit
 
                         </a>
-                        <a href="./deleteCourse.html?courseId=${courseId}" class="btn btn-danger deleteButton">
-
-                            Delete
-
-                        </a>
-                        <a href="./course.html?courseId=${courseId}" class="btn btn-warning deleteButton">
+                        <a href="./course.html?courseId=${courseId}" class="btn btn-warning checkButton">
 
                         Check Course
 
@@ -67,19 +62,28 @@ fetch('https://nrecto-course-booking.herokuapp.com/api/courses/')
             }
             return cardFooter;
         }
+        
+        
+
+        // const toggleSwitch = document.querySelector('.card-footer');
+        
+        // toggleSwitch.addEventListener('change', () =>{
+        //     console.log("test")
+        // });
+
         let courseContainer = document.querySelector("#courseContainer");
         let courseData = activeCourse.map(elem => {
             return `
-            <div class="col-12 col-md-6 my-3">
+            <div class="col-12 col-md-6 my-3 d-flex flex-nowrap mx-auto">
                 <div class="card">
                     <div class="card-body">
                     <h5 class="card-title">${elem.name}</h5>
                     <p class="card-text text-right">&#8369; ${elem.price}</p>
                     <p class="card-text">${elem.description}</p>
                     </div>
-                    <div class="card-footer">
+                    <div class="card-footer ">
                     ${displayCardFooter(elem._id)}
-                </div>
+                    </div>
                 </div>
             </div>`
         })
