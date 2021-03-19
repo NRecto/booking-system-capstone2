@@ -18,15 +18,15 @@ if  (!token) {
                 <a class="nav-link active" aria-current="page" href="./../index.html">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="./pages/courses.html">Courses</a>
+                <a class="nav-link" href="./courses.html">Courses</a>
             </li>
         </ul>
         <ul class="navbar-nav">
             <li class="nav-item ">
-                <a href="./pages/login.html" class="nav-link ">Login</a>
+                <a href="./login.html" class="nav-link ">Login</a>
             </li>
             <li class="nav-item">
-                <a href="./pages/register.html" class="nav-link ">Register</a>
+                <a href="./register.html" class="nav-link ">Register</a>
             </li>
         </ul>
     </div>
@@ -122,29 +122,50 @@ document.querySelector('#enrollButton').addEventListener('click', () => {
 
     // validate if login
     if (!token) {
-        alert("Login first, to enroll.")
+        Swal.fire({
+            title: 'Error!',
+            text: 'Login Failed!',
+            icon: 'error',
+            confirmButtonText: 'OK'
+        })
+        .then( () => 
         window.location.replace('./login.html')
+        )
+    } else {
+
+        fetch('https://nrecto-course-booking.herokuapp.com/api/users/enroll',
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type' : 'application/json',
+                    'Authorization' : `Bearer ${localStorage['token']}`
+                },
+                body: JSON.stringify({courseId})
+            }
+        )
+        .then( res => res.json() )
+        .then( data => {
+            if (!data) {
+                return Swal.fire({
+                    title: 'Error!',
+                    text: 'Enrollment failed!',
+                    icon: 'error',
+                    confirmButtonText: 'ok'
+                })
+            } else {
+                return Swal.fire({
+                    title: 'Success!',
+                    text: 'Thank You for Enroll. Please Check your Email for more information.',
+                    icon: 'success',
+                    confirmButtonText: 'COOL'
+                })
+                .then( () => 
+                window.location.replace('./courses.html')
+                )
+            }
+        })
     }
         
-    fetch('https://nrecto-course-booking.herokuapp.com/api/users/enroll',
-        {
-            method: 'POST',
-            headers: {
-                'Content-Type' : 'application/json',
-                'Authorization' : `Bearer ${localStorage['token']}`
-            },
-            body: JSON.stringify({courseId})
-        }
-    )
-    .then( res => res.json() )
-    .then( data => {
-        if (!data) {
-            alert("Something Went Wrong")
-        } else {
-            alert("Thank You for Enroll. Please Check your Email for more information.")
-            window.location.replace('./courses.html')
-        }
-    })
     
 })
 

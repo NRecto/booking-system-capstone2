@@ -21,25 +21,32 @@ logInUser.addEventListener('submit', (e) => {
         .then(res => res.json())
         .then(data => {
                 // console.log(data)
-                if (!data) return alert('Something went wrong!');
-
-                localStorage.setItem('token', data.Token)
-
-                fetch('https://nrecto-course-booking.herokuapp.com/api/users/details/', {
-                        headers: {
-                            "Authorization": `Bearer ${localStorage['token']}`
-                        }
+                if (!data) {
+                    return Swal.fire({
+                        title: 'Error!',
+                        text: 'Login Failed!',
+                        icon: 'error',
+                        confirmButtonText: 'OK'
                     })
-                    .then(res => {
-                        return res.json()
-                    })
-                    .then(data => {
-                        localStorage['id'] = data._id;
-                        localStorage['isAdmin'] = data.isAdmin;
+                }else {
+                    localStorage.setItem('token', data.Token)
 
-                        window.location.replace('./courses.html')
-                    })
-            }
+                    fetch('https://nrecto-course-booking.herokuapp.com/api/users/details/', {
+                            headers: {
+                                "Authorization": `Bearer ${localStorage['token']}`
+                            }
+                        })
+                        .then(res => {
+                            return res.json()
+                        })
+                        .then(data => {
+                            localStorage['id'] = data._id;
+                            localStorage['isAdmin'] = data.isAdmin;
+    
+                            window.location.replace('./courses.html')
+                        })
+                }
 
-        )
+                
+            })
 })

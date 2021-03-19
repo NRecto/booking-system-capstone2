@@ -1,13 +1,13 @@
-let authIsAdmin = localStorage['isAdmin'];
+// let authIsAdmin = localStorage['isAdmin'];
 
-let auth = () => {
-    if (authIsAdmin === 'false') {
-        alert('You are not allowed here!')
-        window.location.replace('./login.html')
+// let auth = () => {
+//     if (authIsAdmin === 'false') {
+//         alert('You are not allowed here!')
+//         window.location.replace('./login.html')
 
-    }
-}
-auth();
+//     }
+// }
+// auth();
 
 let createCourse = document.querySelector('#createCourse');
 
@@ -34,11 +34,25 @@ createCourse.addEventListener('submit', (e) => {
         })
         .then(res => res.json())
         .then(data => {
-            if (!data) return ('Something went wrong');
+            
+            if (data == false) {
+                return Swal.fire({
+                    title: 'Error!',
+                    text: 'Something went wrong',
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                    })
+            } else {
+                return Swal.fire({
+                    title: 'Success!',
+                    text: 'Course Created!',
+                    icon: 'success',
+                    confirmButtonText: 'COOL'
+                    }).then( () => 
+                    window.location.replace('./courses.html')
+                    )
+            }
 
-            alert('Course created succesfully!')
-
-            window.location.replace('./courses.html')
         })
 
 
