@@ -48,28 +48,27 @@
     </nav>
     <!-- NAV END -->
     <!-- HEADER START -->
-    <!-- <div class="container d-flex justify-content-center">
-        <iframe id="ytLink" src="https://www.youtube.com/embed/NJiKOijS0uE?controls=0&autoplay=1">
-        </iframe>
-    </div> -->
-        <div id="coursesHeader" class="container d-flex justify-content-center align-items-center text-center">
-            <div class="row">
-                <div class="col-12">
-                    <h1 data-aos="zoom-in" data-aos-duration="1500" data-aos-easing="ease-in-out">Campeón</h1>
-                    <p class="lead" data-aos="fade-up" data-aos-duration="1500" data-aos-easing="ease-in-out" data-aos-delay="1500">Be part of the best riders in the Philippines.</p>
+        <div id="coursesHeader" class="container-fluid d-flex justify-content-center align-items-center text-center">
+            <div class="row container-fluid">
+                <div class="col-12 col-md-6 d-flex justify-content-center align-items-center flex-column" data-aos="fade-left" data-aos-duration="2000" data-aos-easing="ease-in-out">
+                    <h1>Campeón</h1>
+                    <p class="lead">Be part of the best riders in the Philippines.</p>
+                </div>
+                <div class="col-12 col-md-6" data-aos="fade-right" data-aos-duration="2000" data-aos-easing="ease-in-out">
+                    <img src="./../assets/images/motodeck.png" alt="" id="motodeckImages">
                 </div>
             </div>
         </div>
     <!-- HEADER END -->
     <!-- MAIN START -->
-    <main class="container-fluid my-5 ">
+    <main id="mainCourses" class="container-fluid">
     <!-- admin buttons start -->
     <div id="adminButton" class="row ">
         <p>
         </p>
     </div>
     <!-- admin button end -->
-    <div class="d-flex justify-content-center" id="coursesTitle">
+    <div class="d-flex justify-content-center" id="coursesTitle" data-aos="zoom-in" data-aos-duration="1500" data-aos-easing="ease-in-out">
         <h2>Courses Offered</h2>
     </div>
     <div id="courseContainer" class="row mx-5">
@@ -103,7 +102,7 @@
     <!-- ANIMATE ON SCROLL -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-      AOS.init();
+        AOS.init();
     </script>
 </body>
 

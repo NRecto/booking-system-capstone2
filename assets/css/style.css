@@ -2,15 +2,16 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* outline: 1px solid red; */
     font-family: 'Baloo 2', cursive;
 /* font-family: 'Poppins', sans-serif; */
 }
 
-html, body {
+body {
     height: 100vh;
     max-width: 100%;
     overflow-x: hidden;
-    background: url("/assets/images/bg.jpg") no-repeat fixed;
+    background: url("/assets/images/Moonlit.jpg") no-repeat fixed;
     background-size: cover;
 }
 header {
@@ -24,54 +25,78 @@ p, .btn, a {
 
 .navbar {
     padding: 10px 20px;
-    background: transparent !important;
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
+    background-color: transparent !important;
+
+}
+.nav-link {
+    color: #fff !important;
+}
+.navbar-brand {
+    color: #F2632F !important;
 }
 .navbar li {
     font-size: 1rem;
 }
 
-/* index */
 .btn {
     background-color: transparent;
     border: 1px solid #070707;
     color: #000000;
+    /* border-radius: 50px;
+    width: 50%; */
 }
 .btn:hover {
     background-color: #F2632F;
     border: 1px solid #F2632F;
     color: rgb(255, 255, 255);
 }
+/* index */
+#landingPage .btn {
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    color: #F2632F;
+}
+#landingPage .btn:hover {
+    background-color: #F2632F;
+    border: 1px solid #F2632F;
+    color: #fff;
+}
 #landingPage {
     display: flex;
     justify-content: center;
+    align-items: center;
     text-align: center;
-    width: 70vw;
+    width: 100vw;
+    height: 100vh;
+    background: url("/assets/images/bg.jpg") no-repeat center;
+    background-size: cover;
 }
-
 #landingPage h1 {
-    font-size: 6.5rem;
+    font-size: 9rem;
     margin-top: 50px;
     color: #F2632F;
 }
 #landingPage p {
     font-weight: 700;
+    font-size: 1.5rem;
     color: #fff;
-
 }
 #landingPage :is(h1, p) {
     text-shadow: 5px 1px 10px black;
 }
-#landingImage {
-    display: flex;
-    justify-content: flex-end;
-}
-#motodeck {
-    height: 600px;
-}
 #courseContainer {
     margin-bottom: 15vh;
+}
+#ytLink {
+    width: 100vw;
+    height: 50vh;
+}
+#landingFeature {
+    background: url('/assets/images/Clear.jpg');
+    color: #fff;
+    text-shadow: 0pc 5px 5px #000000;
 }
 
 /* Login Form */
@@ -83,21 +108,24 @@ p, .btn, a {
 }
 
 /* COURSES */
+#motodeckImages {
+    height: 500px;
+}
 #carousel img {
     height: 550px;
-}
-#ytLink {
-    width: 100vw;
-    height: 50vh;
 }
 #coursesHeader {
     padding-top: 5%;
     color: #fff;
     text-shadow: 5px 10px 10px #000000;
-    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("/assets/images/Moonlit.jpg") no-repeat fixed;
+    background-size: cover;
 }
 #coursesHeader h1{
-    font-size: 10rem;
+    font-size: 6rem;
     color: #F2632F;
 }
 #coursesHeader p{
@@ -111,8 +139,9 @@ p, .btn, a {
     text-shadow: 0px 5px 5px #000000;
     margin-bottom: 5%;
 }
-main {
-    background-color: rgba(212,225,237);
+#mainCourses {
+    background: url("/assets/images/Sin.jpg") no-repeat fixed;
+    background-size: cover;
     padding: 5%;
 }
 .card {
@@ -123,7 +152,6 @@ main {
     margin: 3% 5%;
 
 }
-
 
 footer {
     min-width: 100vw;
@@ -136,14 +164,23 @@ footer {
 
 /* CHANGES FOR MOBILE PHONES */
 @media only screen and (max-width: 1100px) {
-    #motodeck {
-        height: 400px;
-    }
     #landingPage h1 {
         font-size: 4rem;
     }
     #landingPage {
         text-align: center;
     }
+    #landingFeature :is(h1, p){
+        text-align: center;
+    }
+    #coursesHeader h1{
+        font-size: 4rem;
+    }
+    #coursesTitle h2 {
+        text-align: center;
+    }
+    
+
+    
     
 }

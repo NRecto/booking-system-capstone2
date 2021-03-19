@@ -130,7 +130,7 @@ fetch('https://nrecto-course-booking.herokuapp.com/api/courses/')
         let courseContainer = document.querySelector("#courseContainer");
         let courseData = activeCourse.map(elem => {
             return `
-            <div class="col-12 col-md-6 my-3 d-flex flex-nowrap mx-auto">
+            <div class="col-12 col-md-6 my-3 d-flex flex-nowrap mx-auto" data-aos="zoom-in" data-aos-duration="1500" data-aos-easing="ease-in-out">
                 <div class="card">
                     <div class="card-body">
                     <h5 class="card-title">${elem.name}</h5>
