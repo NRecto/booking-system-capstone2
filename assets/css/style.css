@@ -44,9 +44,11 @@ p, .btn, a {
     background-color: #0015d6;
     border: 1px solid #0015d6;
     color: #ffffff;
-    /* border-radius: 50px;
-    width: 50%; */
+    border-radius: 50px;
+    width: 150px;
+    transition: 0.3s ease-in-out;
 }
+
 .btn:hover {
     background-color: #ffffff;
     border: 1px solid #0015d6;
@@ -57,6 +59,7 @@ p, .btn, a {
     background-color: #ffffff;
     border: 1px solid #F2632F;
     color: #F2632F;
+    transition: all 0.3s ease-in-out;
 }
 #landingPage .btn:hover {
     background-color: #F2632F;
@@ -221,14 +224,39 @@ p, .btn, a {
 
 }
 
-footer {
+.footer {
+    text-align: center;
+    color: #ffffff;
     min-width: 100vw;
     position: relative;
     left: 0;
     bottom: 0;
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
+    padding: 3% 5% 0 5% ;
 }
+.footer a{
+    background-color: transparent;
+    border-radius: 50px;
+    border: 1px solid #F2632F;
+}
+.footer a:hover{
+    background-color: transparent;
+    border-radius: 50px;
+    border: 1px solid #F2632F;
+    color: #F2632F;
+}
+.icons a{
+    border: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 1.5rem;
+    transition: 0.3s ease-in-out;
+}
+.icons a:hover{
+    border: none;
+}
+
 
 /* CHANGES FOR MOBILE PHONES */
 @media only screen and (max-width: 1100px) {
