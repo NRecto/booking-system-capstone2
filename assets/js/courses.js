@@ -79,7 +79,7 @@ fetch('https://nrecto-course-booking.herokuapp.com/api/courses/')
         return res.json()
     })
     .then(data => {
-        // console.log(data)
+        console.log(data)
         // if not admin show only active courses
         let activeCourse = [];
         if ( adminUser == 'false' ) {
@@ -93,7 +93,7 @@ fetch('https://nrecto-course-booking.herokuapp.com/api/courses/')
                 return activeCourse.push(course);
             })
         }
-        // DYNAMICALLY CHANGE THE FOOTER ACCPRDING TO isAdmin
+        // DYNAMICALLY CHANGE THE FOOTER ACCORDING TO isAdmin
         function displayCardFooter(courseId) {
             if (adminUser == 'false' || !adminUser) {
                 cardFooter = 
@@ -107,16 +107,23 @@ fetch('https://nrecto-course-booking.herokuapp.com/api/courses/')
             } else {
                     cardFooter = 
                     `
-                        <a href="./editCourse.html?courseId=${courseId}" class="btn btn-primary editButton">
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <a href="./editCourse.html?courseId=${courseId}" class="btn btn-primary editButton">
 
-                            Edit
+                                Edit
 
-                        </a>
-                        <a href="./course.html?courseId=${courseId}" class="btn btn-warning checkButton">
+                            </a>
+                            <a href="./course.html?courseId=${courseId}" class="btn btn-warning checkButton">
 
-                        Check Course
+                            Check Course
 
-                        </a>
+                            </a>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="col-12" id="courseActive"><p id="courseActiveText"></p></div>
+                        </div>
+                    </div>
                     `
             }
             return cardFooter;
@@ -125,6 +132,7 @@ fetch('https://nrecto-course-booking.herokuapp.com/api/courses/')
         let courseContainer = document.querySelector("#courseContainer");
         let seeMore;
         let courseData = activeCourse.map(elem => {
+            // IF THE DESCRIPTION IS OVER 500 CHARACTERS THEN SEE MORE
             if (elem.description.length > 500) {
                 seeMore = elem.description.slice(0,500)
             } else {

@@ -46,23 +46,25 @@ const profileDetails =
 `
 <div class="col-12">
 		<section>
-			<div>
+			<div id="userDetail">
 				<h2>Name: ${data.firstName} ${data.lastName}</h2>
 				<h2>Email : ${data.email}</h2>
-				<h3 class="mt-5">Class History</h3>
 			</div>
-			<table class="table table-hover">
-				<thead>
-					<tr>
-						<th> Course ID</th>
-						<th> Enrolled On</th>
-						<th> Status </th>
-					</tr>
-				</thead>
-				<tbody>
-					${message}
-				</tbody>
-			</table>
+			<div id="userCoursesEnrolled">
+			<h3 class="mt-3">User History</h3>
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th> Course ID</th>
+							<th> Enrolled On</th>
+							<th> Status </th>
+						</tr>
+					</thead>
+					<tbody>
+						${message}
+					</tbody>
+				</table>
+			</div>
 		</section>
 	</div>
 `
