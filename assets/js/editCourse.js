@@ -7,6 +7,19 @@ fetch(url)
 .then( res => res.json())
 .then(data => {
 // console.log(data)
+
+// TO SHOW IF COURSE IS ACTIVE OR NOT
+let courseActive = document.querySelector('#courseActive');
+let courseActiveText = document.querySelector('#courseActiveText');
+let activeText;
+if(data.isActive == true) {
+    courseActive.style.backgroundColor = '#05F912';
+    activeText = 'Active'
+} else {
+    courseActive.style.backgroundColor = '#FA0501';
+    activeText = 'Disabled'
+}
+courseActiveText.innerHTML = activeText;
 let editCourse = document.querySelector('#editCourse');
 
 return editCourse.innerHTML =
@@ -24,6 +37,7 @@ return editCourse.innerHTML =
 <button id="submitButton" class="btn btn-outline-primary">Submit</button>
 
 `
+
 })
 .then( result =>{
  	let submitButton = document.querySelector('#submitButton')
@@ -51,11 +65,21 @@ return editCourse.innerHTML =
 		.then( res => res.json())
 		.then( data => {
 
-			if(!data) return alert("Something went Wrong.");
-			
-			alert("Course Change.");
-			window.location.replace('./courses.html');
-
+			if(!data) {
+				Swal.fire({
+					title: 'Error!',
+					text: 'Something went Wrong.',
+					icon: 'error',
+					confirmButtonText: 'Ok'
+				  })
+			} else {
+				Swal.fire({
+					title: 'Success!',
+					text: 'Course Change!',
+					icon: 'success',
+					confirmButtonText: 'Cool'
+				  }).then ( () => window.location.replace('./courses.html'))
+			}
 		})
 
 	}); // end ofcallback function on submit
@@ -70,7 +94,14 @@ return editCourse.innerHTML =
 				}
 			})
 			.then( res => res.json())
-			.then( () => alert('Course Enabled'))
+			.then( () => 
+				Swal.fire({
+					title: 'Success!',
+					text: 'Course Enabled!',
+					icon: 'success',
+					confirmButtonText: 'Cool'
+				}).then ( () => window.location.reload())
+			)
 		} else {
 			fetch(url, {
 				method: 'DELETE',
@@ -79,7 +110,14 @@ return editCourse.innerHTML =
 				}
 			})
 			.then( res => res.json())
-			.then( () => alert('Course disabled'))
+			.then( () => 
+				Swal.fire({
+					title: 'Success!',
+					text: 'Course Disabled!',
+					icon: 'success',
+					confirmButtonText: 'Cool'
+				}).then ( () => window.location.reload())
+			)
 		}
 	})
 

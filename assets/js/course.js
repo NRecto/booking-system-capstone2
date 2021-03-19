@@ -67,7 +67,7 @@ let url = `https://nrecto-course-booking.herokuapp.com/api/courses/${courseId}`;
 fetch(url)
 .then( res => res.json())
 .then(data => {
-// console.log(data.enrollees)
+console.log(data)
 let courseName = document.querySelector('#courseName');
 let courseDesc = document.querySelector('#courseDesc');
 let coursePrice = document.querySelector('#coursePrice');
@@ -80,6 +80,20 @@ let adminData = document.querySelector('#adminData');
 // console.log(data.enrollees)
 let userData;
 let userNo = 0;
+
+// TO SHOW IF COURSE IS ACTIVE OR NOT
+let courseActive = document.querySelector('#courseActive');
+let courseActiveText = document.querySelector('#courseActiveText');
+let activeText;
+if(data.isActive == true) {
+    courseActive.style.backgroundColor = '#05F912';
+    activeText = 'Active'
+} else {
+    courseActive.style.backgroundColor = '#FA0501';
+    activeText = 'Disabled'
+}
+courseActiveText.innerHTML = activeText;
+
 
 if (isAdmin == 'true') {
     if ( data.enrollees == 0) {
@@ -117,7 +131,7 @@ if (isAdmin == 'true') {
 
 
 
-
+// TO ENROLL
 document.querySelector('#enrollButton').addEventListener('click', () => {
 
     // validate if login

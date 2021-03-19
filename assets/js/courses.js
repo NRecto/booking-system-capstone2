@@ -122,23 +122,21 @@ fetch('https://nrecto-course-booking.herokuapp.com/api/courses/')
             return cardFooter;
         }
         
-        
-
-        // const toggleSwitch = document.querySelector('.card-footer');
-        
-        // toggleSwitch.addEventListener('change', () =>{
-        //     console.log("test")
-        // });
-
         let courseContainer = document.querySelector("#courseContainer");
+        let seeMore;
         let courseData = activeCourse.map(elem => {
+            if (elem.description.length > 500) {
+                seeMore = elem.description.slice(0,500)
+            } else {
+                seeMore = elem.description;
+            }
             return `
-            <div class="col-12 col-md-6 my-3 d-flex flex-nowrap mx-auto" data-aos="zoom-in" data-aos-duration="1500" data-aos-easing="ease-in-out">
+            <div class="col-12 my-3 d-flex justify-content-center" data-aos="zoom-in" data-aos-duration="1500" data-aos-easing="ease-in-out">
                 <div class="card">
                     <div class="card-body">
-                    <h5 class="card-title">${elem.name}</h5>
+                    <h2 class="card-title">${elem.name}</h2>
                     <p class="card-text text-right">&#8369; ${elem.price}</p>
-                    <p class="card-text">${elem.description}</p>
+                    <p class="card-text">${seeMore}<span class="text-secondary"> ... Select course to see more.</span></p>
                     </div>
                     <div class="card-footer ">
                     ${displayCardFooter(elem._id)}

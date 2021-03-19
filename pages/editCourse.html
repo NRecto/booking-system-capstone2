@@ -12,6 +12,11 @@
     <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Gruppo&display=swap" rel="stylesheet">
+
+    <!-- SWEETALERT -->
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Gruppo&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.6/dist/sweetalert2.all.min.js" integrity="sha256-RRb75FFB4bqHpBTVaEua+QNVpKSI5m4HBvQKgY1E8S4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="sweetalert2.min.css">
     <title>Campeón | Edit Course</title>
 </head>
 
@@ -42,18 +47,28 @@
     </nav>
     <!-- NAV END -->
     <!-- MAIN START -->
-    <div id="courseEdit" class="container my-5 d-flex justify-content-center ">
-        <div class="row w-100 ">
-            <div class="col-12 col-md-6 mx-auto">
+    <div id="courseEdit" class="container my-5">
+        <div class="row w-100 container">
+            <div class="col-12">
                 <h2 class="my-5 text-center">Edit Course</h2>
-                <div class="d-flex justify-content-end align-items-center my-2 mx-2 ">
-                    <select class="form-select w-50" aria-label="Default select example">
-                        <option selected>Enable / Disable Course</option>
-                        <option value="true">Enabled</option>
-                        <option value="false">Disabled</option>
-                    </select>
-                  </div>
-            
+                <div class="row">
+                    <div class="col-12">
+                        <div >
+                            <select class="form-select w-50" aria-label="Default select example">
+                                <option selected>Enable / Disable Course</option>
+                                <option value="true">Enabled</option>
+                                <option value="false">Disabled</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-12 mt-3">
+                        <div class="col-12 " id="courseActive"><p id="courseActiveText">asd</p></div>
+                    </div>
+                </div>
+                
+                <div>
+                    
+                </div>
                 <form action="" id="editCourse">
                     <div class="form-row">
                         <div class="form-group my-3">
@@ -69,6 +84,7 @@
             </div>
         </div>
     </div>
+</div>
     <!-- MAIN END -->
     <!-- FOOTER START -->
     <footer class="footer container-fluid">
