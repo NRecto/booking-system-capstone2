@@ -12,14 +12,14 @@
     <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Gruppo&display=swap" rel="stylesheet">
-    <title>Login</title>
+    <title>Campeón | Login</title>
 </head>
 
 <body>
     <!--NAV START  -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="./../index.html">Zuitter</a>
+            <a class="navbar-brand" href="./../index.html">Campeón</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -42,33 +42,38 @@
     </nav>
     <!-- NAV END -->
     <!-- MAIN START -->
-    <div id="loginForm" class="container my-5 card">
-        <h2 class="text-center my-5">Login</h2>
-        <div class="row ">
-            <div class="col-md-6 mx-auto">
-                <form action="" id="logInUser">
-                    <div class="form-group my-3">
-                        <label for="email">Email:</label>
-                        <input type="email" name="email" id="email" class="form-control" required>
+    <div class="container" id="loginBrand">
+        <div class="row container"  >
+            <div class="col-12 col-md-6" >
+                <h1>Campeón</h1>
+            </div>
+            <div class="col-12 col-md-6">
+                <div id="loginForm">
+                    <h2 class="text-center my-5">Login</h2>
+                    <form action="" id="logInUser">
+                        <div class="form-group my-3">
+                            <label for="email">Email:</label>
+                            <input type="email" name="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group my-3">
+                            <label for="password">Password:</label>
+                            <input type="password" name="password" id="password" class="form-control" required>
+                        </div>
+                        <button class="btn btn-primary">Log In</button>
+                    </form>
+                    <div>
+                        <a href="./register.html"> Not yet registered? Sign up here.</a>
                     </div>
-                    <div class="form-group my-3">
-                        <label for="password">Password:</label>
-                        <input type="password" name="password" id="password" class="form-control" required>
-                    </div>
-                    <button class="btn btn-primary">Log In</button>
-                </form>
-                <div>
-                    <a href="./register.html"> Not yet registered? Sign up here.</a>
                 </div>
             </div>
         </div>
     </div>
+
     <!-- MAIN END -->
     <!-- FOOTER START -->
-    <footer class="footer bg-primary">
+    <footer class="footer">
         <p class="text-white p-3 mb-0 text-center ">
-            Zuitter Booking Services
-        </p>
+            Campeón | 2021
     </footer>
     <!-- FOOTER END -->
     <!-- Option 2: Separate Popper and Bootstrap JS -->

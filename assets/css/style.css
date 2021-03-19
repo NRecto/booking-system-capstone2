@@ -41,21 +41,21 @@ p, .btn, a {
 }
 
 .btn {
-    background-color: transparent;
-    border: 1px solid #070707;
-    color: #000000;
+    background-color: #0015d6;
+    border: 1px solid #0015d6;
+    color: #ffffff;
     /* border-radius: 50px;
     width: 50%; */
 }
 .btn:hover {
-    background-color: #F2632F;
-    border: 1px solid #F2632F;
-    color: rgb(255, 255, 255);
+    background-color: #ffffff;
+    border: 1px solid #0015d6;
+    color: #0015d6;
 }
 /* index */
 #landingPage .btn {
     background-color: #ffffff;
-    border: 1px solid #ffffff;
+    border: 1px solid #F2632F;
     color: #F2632F;
 }
 #landingPage .btn:hover {
@@ -100,16 +100,39 @@ p, .btn, a {
 }
 
 /* Login Form */
+#loginBrand h1{
+    color: #F2632F;
+    font-size: 6rem;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#loginBrand ,
+#loginBrand .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 #loginForm {
-    padding-bottom: 5% ;
+    padding: 5% 10%;
+    background-color: #fff;
+    border-radius: 50px;
 }
 #loginForm form {
     margin-bottom: 25px;
 }
+/* COURSE */
+#checkCourse{
+    background-color: #fff;
+    padding: 5% 10%;
+    border-radius: 50px;
 
+
+}
 /* COURSES */
 #motodeckImages {
-    height: 500px;
+    height: 300px;
 }
 #carousel img {
     height: 550px;
@@ -125,13 +148,12 @@ p, .btn, a {
     background-size: cover;
 }
 #coursesHeader h1{
-    font-size: 6rem;
+    font-size: 4rem;
     color: #F2632F;
 }
 #coursesHeader p{
     font-weight: 700;
     text-shadow: 0px 5px 10px #000000;
-    font-size: 1.5rem;
 }
 #coursesTitle h2 {
     color: #fff;
@@ -140,7 +162,7 @@ p, .btn, a {
     margin-bottom: 5%;
 }
 #mainCourses {
-    background: url("/assets/images/Sin.jpg") no-repeat fixed;
+    background: url("/assets/images/Pinot.jpg") no-repeat fixed;
     background-size: cover;
     padding: 5%;
 }
@@ -150,12 +172,58 @@ p, .btn, a {
     box-shadow: 5px 10px 20px  #000000;
     background-color: #fff;
     margin: 3% 5%;
+}
+#courseContainer .checkButton {
+    background-color: #d6c800;
+    border: 1px solid #d6c800;
+    color: #ffffff;
+}
+#courseContainer .checkButton:hover {
+    background-color: #ffffff;
+    border: 1px solid #d6c800;
+    color: #d6c800;
+}
+/* ADDING COURSE */
+#addCourse {
+    color: #fff;
+}
+
+/* PROFILE */
+#mainProfile {
+    background-color: #fff;
+    padding: 3% 5%;
+    border-radius: 25px;
+    margin-bottom: 10vh;
+}
+
+#registrationDiv {
+    background-color: #fff;
+    border-radius: 50px;
+    padding: 3% 5%;
+}
+#registrationMain {
+
+}
+#regBrand h1 {
+    color: #F2632F;
+    font-size: 6rem;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* EDIT COURSE */
+#courseEdit {
+    background-color: #fff;
+    border-radius: 50px;
+    padding: 3% 5%;
 
 }
 
 footer {
     min-width: 100vw;
-    position: fixed;
+    position: relative;
     left: 0;
     bottom: 0;
     font-family: 'Poppins', sans-serif;
@@ -173,14 +241,13 @@ footer {
     #landingFeature :is(h1, p){
         text-align: center;
     }
-    #coursesHeader h1{
+    #coursesHeader h1,
+    #loginBrand h1,
+    #regBrand h1 {
         font-size: 4rem;
     }
     #coursesTitle h2 {
         text-align: center;
-    }
-    
-
-    
+    }    
     
 }

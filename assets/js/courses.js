@@ -47,6 +47,9 @@ if  (!token) {
                     <li class="nav-item">
                         <a class="nav-link active" href="./courses.html">Courses</a>
                     </li>
+                    <li class="nav-item">
+                        <a href="./profile.html" class="nav-link ">Profile</a>
+                    </li>
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item ">
@@ -66,7 +69,7 @@ if (adminUser == 'false' || !adminUser) {
 } else {
     adminButton.innerHTML = `
             <div class="col-12 text-center my-5">
-                <a href="./addCourse.html" class="btn btn-primary">Add Course</a>
+                <a href="./addCourse.html" class="btn btn-primary adminButton">Add Course</a>
             </div>
             `
 }

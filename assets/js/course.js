@@ -8,7 +8,7 @@ let navbar = document.querySelector('.navbar');
 
 if  (!token) {
     navbar.innerHTML = `<div class="container-fluid">
-    <a class="navbar-brand" href="./../index.html">Zuitter</a>
+    <a class="navbar-brand" href="./../index.html">Campeón</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -34,7 +34,7 @@ if  (!token) {
 } else {
     navbar.innerHTML = `
     <div class="container-fluid">
-            <a class="navbar-brand" href="./../index.html">Zuitter</a>
+            <a class="navbar-brand" href="./../index.html">Campeón</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -45,6 +45,9 @@ if  (!token) {
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./courses.html">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                    <a href="./profile.html" class="nav-link ">Profile</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav">
