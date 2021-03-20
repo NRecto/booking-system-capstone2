@@ -11,7 +11,7 @@ body {
     height: 100vh;
     max-width: 100%;
     overflow-x: hidden;
-    background: url("/assets/images/Moonlit.jpg") no-repeat fixed;
+    background: url("../images/Moonlit.jpg") no-repeat fixed;
     background-size: cover;
 }
 header {
@@ -102,7 +102,7 @@ p, .btn, a {
     height: 50vh;
 }
 #landingFeature {
-    background: url('/assets/images/Clear.jpg') no-repeat center;
+    background: url('../images/Clear.jpg') no-repeat center;
     background-size: cover;
     color: #fff;
     text-shadow: 0pc 5px 5px #000000;
@@ -163,7 +163,7 @@ p, .btn, a {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url("/assets/images/Moonlit.jpg") no-repeat fixed;
+    background: url("../assets/images/Moonlit.jpg") no-repeat fixed;
     background-size: cover;
 }
 #coursesHeader h1{
@@ -181,7 +181,7 @@ p, .btn, a {
     margin-bottom: 5%;
 }
 #mainCourses {
-    background: url("/assets/images/Pinot.jpg") no-repeat fixed;
+    background: url("../assets/images/Pinot.jpg") no-repeat fixed;
     background-size: cover;
     padding: 5%;
 }
