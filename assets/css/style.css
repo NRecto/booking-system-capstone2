@@ -59,7 +59,6 @@ p, .btn, a {
     background-color: #ffffff;
     border: 1px solid #F2632F;
     color: #F2632F;
-    transition: all 0.3s ease-in-out;
 }
 #landingPage .btn:hover {
     background-color: #F2632F;
@@ -111,6 +110,7 @@ p, .btn, a {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-shadow: 0px 5px 5px #000000;
 }
 #loginBrand ,
 #loginBrand .row {
@@ -120,8 +120,9 @@ p, .btn, a {
 }
 #loginForm {
     padding: 5% 10%;
-    background-color: #fff;
+    background: transparent;
     border-radius: 50px;
+    color: #ffffff;
 }
 #loginForm form {
     margin-bottom: 25px;
@@ -256,6 +257,7 @@ p, .btn, a {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
     padding: 3% 5% 0 5% ;
+    margin-top: 5vh;
 }
 .footer a{
     background-color: transparent;
@@ -298,6 +300,15 @@ p, .btn, a {
     }
     #coursesTitle h2 {
         text-align: center;
-    }    
+    }
+    #loginBrand h1{
+        color: #F2632F;
+        font-size: 6rem;
+        height: 30vh;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        padding-top: 15%;
+    }
     
 }
