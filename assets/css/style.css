@@ -72,16 +72,17 @@ p, .btn, a {
     text-align: center;
     width: 100vw;
     height: 100vh;
-    background: url("/assets/images/bg.jpg") no-repeat center;
-    background-size: cover;
+    /* background: url("/assets/images/bg.jpg") no-repeat center;
+    background-size: cover; */
+    background-color: #000;
 }
 #landingPage h1 {
     font-size: 9rem;
     margin-top: 50px;
     color: #F2632F;
+    font-family: 'Bebas Neue', cursive;
 }
 #landingPage p {
-    font-weight: 700;
     font-size: 1.5rem;
     color: #fff;
 }
