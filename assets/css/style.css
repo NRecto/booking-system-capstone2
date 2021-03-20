@@ -4,7 +4,8 @@
     box-sizing: border-box;
     /* outline: 1px solid red; */
     font-family: 'Baloo 2', cursive;
-/* font-family: 'Poppins', sans-serif; */
+/* font-family: 'Poppins', sans-serif; 
+font-family: 'Bebas Neue', cursive;*/
 }
 
 body {
@@ -76,10 +77,6 @@ p, .btn, a {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-/* 
-    background: url('./assets/images/bg.jpg') no-repeat center;
-    background-size: cover; */
-    /* background-color: #000; */
 }
 #landingPage h1 {
     font-size: 9rem;
@@ -117,6 +114,7 @@ p, .btn, a {
     justify-content: center;
     align-items: center;
     text-shadow: 0px 5px 5px #000000;
+    font-family: 'Bebas Neue', cursive;
 }
 #loginBrand ,
 #loginBrand .row {
@@ -150,6 +148,27 @@ p, .btn, a {
     position: relative;
 }
 /* COURSES */
+#createCourseDiv {
+    border: 1px solid #ffffff;
+    border-radius: 15px;
+    color: #ffffff;
+    padding: 3% 5%;
+    width: 500px;
+}
+#adminButton {
+    display: flex;
+    justify-content: center;
+}
+#adminButton .btn{
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    color: #0015d6;
+}
+#adminButton .btn:hover{
+    border-radius: 5px;
+    background-color: #0015d6;
+    color: #ffffff;
+}
 #motodeckImages {
     height: 300px;
 }
@@ -169,6 +188,7 @@ p, .btn, a {
 #coursesHeader h1{
     font-size: 4rem;
     color: #F2632F;
+    font-family: 'Bebas Neue', cursive;
 }
 #coursesHeader p{
     font-weight: 700;
@@ -181,18 +201,20 @@ p, .btn, a {
     margin-bottom: 5%;
 }
 #mainCourses {
-    background: url("../images/Pinot.jpg") no-repeat fixed;
+    background: url("../images/Royal.jpg") no-repeat fixed;
     background-size: cover;
     padding: 5%;
 }
 .card-title {
     color: #F2632F;
+    font-family: 'Bebas Neue', cursive;
+    font-weight: bolder;
 }
 .card {
     border: 1px solid;
     /* padding: 3px 5px; */
     box-shadow: 5px 10px 20px  #000000;
-    background-color: #fff;
+    background: url('../images/Toad.jpg');
     margin: 3% 5%;
     min-width: 100%;
 }
@@ -235,10 +257,8 @@ p, .btn, a {
     border-radius: 50px;
     padding: 3% 5%;
     color: #ffffff;
+    font-family: 'Poppins', sans-serif;
 }
-/* #registrationMain {
-
-} */
 #regBrand h1 {
     color: #F2632F;
     font-size: 6rem;
@@ -246,6 +266,7 @@ p, .btn, a {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Bebas Neue', cursive;
 }
 
 /* EDIT COURSE */
@@ -318,5 +339,8 @@ p, .btn, a {
         align-items: start;
         padding-top: 15%;
     }
-    
+    #createCourseDiv {
+        padding: 3% 5%;
+        width: 300px;
+    }
 }

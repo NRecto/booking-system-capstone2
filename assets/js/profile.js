@@ -55,7 +55,7 @@ const profileDetails =
 				<table class="table table-hover">
 					<thead>
 						<tr>
-							<th> Course ID</th>
+							<th> Course Name</th>
 							<th> Enrolled On</th>
 							<th> Status </th>
 						</tr>

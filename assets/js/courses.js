@@ -68,8 +68,9 @@ if (adminUser == 'false' || !adminUser) {
     adminButton == "";
 } else {
     adminButton.innerHTML = `
-            <div class="col-12 text-center my-5">
-                <a href="./addCourse.html" class="btn btn-primary adminButton">Add Course</a>
+            <div class="col-12 text-center my-5" id="createCourseDiv">
+                <h3>Create a course.</h3>
+                <a href="./addCourse.html" class="btn btn-primary adminButton">Create</a>
             </div>
             `
 }

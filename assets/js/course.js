@@ -81,21 +81,22 @@ let adminData = document.querySelector('#adminData');
 let userData;
 let userNo = 0;
 
-// TO SHOW IF COURSE IS ACTIVE OR NOT
-let courseActive = document.querySelector('#courseActive');
-let courseActiveText = document.querySelector('#courseActiveText');
-let activeText;
-if(data.isActive == true) {
-    courseActive.style.backgroundColor = '#05F912';
-    activeText = 'Active'
-} else {
-    courseActive.style.backgroundColor = '#FA0501';
-    activeText = 'Disabled'
-}
-courseActiveText.innerHTML = activeText;
 
 
 if (isAdmin == 'true') {
+    // TO SHOW IF COURSE IS ACTIVE OR NOT
+    let courseActive = document.querySelector('#courseActive');
+    let courseActiveText = document.querySelector('#courseActiveText');
+    let activeText;
+    if(data.isActive == true) {
+        courseActive.style.backgroundColor = '#05F912';
+        activeText = 'Active'
+    } else {
+        courseActive.style.backgroundColor = '#FA0501';
+        activeText = 'Disabled'
+    }
+    courseActiveText.innerHTML = activeText;
+    
     if ( data.enrollees == 0) {
         return userData = "No Enrollees yet."
     } else {
