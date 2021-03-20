@@ -163,7 +163,7 @@ p, .btn, a {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url("../assets/images/Moonlit.jpg") no-repeat fixed;
+    background: url("../images/Moonlit.jpg") no-repeat fixed;
     background-size: cover;
 }
 #coursesHeader h1{
@@ -181,7 +181,7 @@ p, .btn, a {
     margin-bottom: 5%;
 }
 #mainCourses {
-    background: url("../assets/images/Pinot.jpg") no-repeat fixed;
+    background: url("../images/Pinot.jpg") no-repeat fixed;
     background-size: cover;
     padding: 5%;
 }
@@ -229,10 +229,12 @@ p, .btn, a {
     margin-bottom: 10vh;
 }
 
+/* REGISTRATION */
 #registrationDiv {
-    background-color: #fff;
+    border: 1px solid #F2632F;
     border-radius: 50px;
     padding: 3% 5%;
+    color: #ffffff;
 }
 /* #registrationMain {
 
