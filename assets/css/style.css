@@ -314,7 +314,11 @@ p, .btn, a {
 /* CHANGES FOR MOBILE PHONES */
 @media only screen and (max-width: 1100px) {
     #landingPage h1 {
-        font-size: 4rem;
+        font-size: 5rem;
+    }
+    #landingPage p {
+        font-size: 1rem;
+        color: #fff;
     }
     #landingPage {
         text-align: center;
