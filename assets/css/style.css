@@ -37,8 +37,17 @@ p, .btn, a {
 .navbar-brand {
     color: #F2632F !important;
 }
+.navbar-brand:hover {
+    transition: 0.3s ease-in-out;
+    border: 1px solid #fff;
+    padding: 5px 10px;
+}
 .navbar li {
     font-size: 1rem;
+}
+.navbar li:hover {
+border: 1px solid #F2632F;
+transition: 0.5s ease-in-out;
 }
 
 .btn {
@@ -135,7 +144,7 @@ p, .btn, a {
 #checkCourse{
     background-color: #fff;
     padding: 5% 10%;
-    border-radius: 50px;
+    border-radius: 25px;
     width: 80vw;
 }
 #courseActive {
@@ -146,6 +155,15 @@ p, .btn, a {
     text-align: center;
     color: white;
     position: relative;
+}
+#courseName {
+    font-size: 3.5rem;
+    font-family: 'Bebas Neue', cursive;
+}
+
+#enrollContainer #coursePrice {
+    font-style: italic;
+    font-size: 1.2rem;
 }
 /* COURSES */
 #createCourseDiv {
@@ -209,6 +227,9 @@ p, .btn, a {
     color: #F2632F;
     font-family: 'Bebas Neue', cursive;
     font-weight: bolder;
+}
+.card-price {
+    font-style: italic;
 }
 .card {
     border: 1px solid;

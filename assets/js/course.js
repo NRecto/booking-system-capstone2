@@ -67,7 +67,7 @@ let url = `https://nrecto-course-booking.herokuapp.com/api/courses/${courseId}`;
 fetch(url)
 .then( res => res.json())
 .then(data => {
-console.log(data)
+// console.log(data)
 let courseName = document.querySelector('#courseName');
 let courseDesc = document.querySelector('#courseDesc');
 let coursePrice = document.querySelector('#coursePrice');
@@ -101,11 +101,12 @@ if (isAdmin == 'true') {
         return userData = "No Enrollees yet."
     } else {
         let enrolleeData = data.enrollees.map( data => {
+            console.log(data)
             userNo++
             return `
             <tr>   
             <td>${userNo}</td>
-            <td>${data.userId}</td>
+            <td>${data.userName}</td>
         </tr>
             `
         });

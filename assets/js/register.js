@@ -24,12 +24,22 @@ registerForm.addEventListener('submit', (e) => {
         })
         .then(res => res.json())
         .then(data => {
-                console.log(data)
+                // console.log(data)
                 if (data) {
-                    alert("Registration Successful!");
-                    window.location.replace('./login.html')
+                    Swal.fire({
+                        title: 'Succes!',
+                        text: 'Registration Successful',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                    })
+                    .then( () => window.location.replace('./login.html') )
                 } else {
-                    alert("Something went wrong!")
+                    Swal.fire({
+                        title: 'Error!',
+                        text: 'Something went wrong. Please try again',
+                        icon: 'error',
+                        confirmButtonText: 'Ok'
+                      })
                 }
             }
 
