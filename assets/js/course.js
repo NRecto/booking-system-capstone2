@@ -121,7 +121,7 @@ if (isAdmin == 'true') {
                         <thead>
                             <tr>   
                                 <th>Enrolled User</th>
-                                <th>User ID</th>
+                                <th>User Name</th>
                             </tr>
                         </thead>
                         <tbody>
