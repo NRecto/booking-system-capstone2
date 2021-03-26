@@ -31,6 +31,9 @@ p, .btn, a {
     background-color: transparent !important;
 
 }
+.navbar-toggler-icon {
+    color:rgb(255, 255, 255) !important;
+}
 .nav-link {
     color: #fff !important;
 }
